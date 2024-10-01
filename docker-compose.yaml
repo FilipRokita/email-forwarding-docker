@@ -1,0 +1,11 @@
+services:
+  mail:
+    image: postfix
+    ports:
+      - "25:25"
+    volumes:
+      - "data:/etc/postfix"
+    restart: unless-stopped
+
+volumes:
+  data: {}
