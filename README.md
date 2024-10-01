@@ -1,7 +1,7 @@
 # Email Forwarding in Docker
-Forward emails from contaxt@yourdomain.com to you@gmail.com!
+Forward emails from contact@yourdomain.com to you@gmail.com!
 
-## Automatically
+## Docker Compose
 
 ```bash
 docker build -t postfix .
