@@ -6,7 +6,8 @@ services:
                       echo virtual_alias_maps = hash:/etc/postfix/virtual >> /etc/postfix/main.cf && \
                       echo ${FORWARD_FROM} ${FORWARD_TO} > /etc/postfix/virtual && \
                       postmap /etc/postfix/virtual && \
-                      postfix reload"
+                      service postfix restart && \
+                      tail -f /dev/null"
     ports:
       - "25:25"
     restart: unless-stopped
