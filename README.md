@@ -10,7 +10,7 @@ docker compose up -d
 ```
 
 ## Manually
-**It worked, but I have no idea why it's not working now**
+**It kinda works?? I think it works!**
 
 ```bash
 docker run -it -p 25:25 --name email-forwarding --restart=unless-stopped ubuntu bash
@@ -18,15 +18,15 @@ docker run -it -p 25:25 --name email-forwarding --restart=unless-stopped ubuntu 
 apt update
 apt install postfix
 
-postfix start
+service postfix start
 
-echo virtual_alias_domains = (DOMAIN NAME) >> /etc/postfix/main.cf
+echo virtual_alias_domains = (DOMAIN) >> /etc/postfix/main.cf
 echo virtual_alias_maps = hash:/etc/postfix/virtual >> /etc/postfix/main.cf
 
-echo (FORWARD FROM) FORWARD TO > /etc/postfix/virtual
+echo (FORWARD FROM) (FORWARD TO) > /etc/postfix/virtual
 
 postmap /etc/postfix/virtual
-postfix reload
+service postfix restart
 
 [CTRL] + [P], then, [CTRL] + [Q]
 ```
