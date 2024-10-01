@@ -1,4 +1,5 @@
-# email-forwarding-docker
+# Email Forwarding in Docker
+Forward emails from contaxt@yourdomain.com to you@gmail.com!
 
 ## Automatically
 
