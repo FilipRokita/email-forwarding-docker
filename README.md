@@ -1,8 +1,6 @@
 # email-forwarding-docker
 
-
 ## Automatically
-**IT'S CURRENTLY NOT WORKING**
 
 ```bash
 docker build -t postfix .
@@ -10,7 +8,6 @@ docker compose up -d
 ```
 
 ## Manually
-**It kinda works?? I think it works!**
 
 ```bash
 docker run -it -p 25:25 --name email-forwarding --restart=unless-stopped ubuntu bash
