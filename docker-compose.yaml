@@ -1,11 +1,12 @@
 services:
   mail:
     image: postfix
+    command: bash -c "echo ${DOMAIN} > /etc/mailname && \
+                      echo virtual_alias_domains = ${DOMAIN} >> /etc/postfix/main.cf && \
+                      echo virtual_alias_maps = hash:/etc/postfix/virtual >> /etc/postfix/main.cf && \
+                      echo ${FORWARD_FROM} ${FORWARD_TO} > /etc/postfix/virtual && \
+                      postmap /etc/postfix/virtual && \
+                      postfix reload"
     ports:
       - "25:25"
-    volumes:
-      - "data:/etc/postfix"
     restart: unless-stopped
-
-volumes:
-  data: {}

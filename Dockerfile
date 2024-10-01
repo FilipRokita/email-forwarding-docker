@@ -9,4 +9,4 @@ RUN apt-get update && \
 EXPOSE 25
 
 # Start Postfix
-CMD ["postfix", "start-fg"]
+CMD ["bash", "-c", "service postfix start && tail -f /dev/null"]
