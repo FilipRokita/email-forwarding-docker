@@ -10,4 +10,4 @@ services:
                       tail -f /dev/null"
     ports:
       - "25:25"
-    restart: unless-stopped
+    restart: always
